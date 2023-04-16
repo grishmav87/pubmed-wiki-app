@@ -1,7 +1,9 @@
+import React from "react";
+import PubmedSearch from "./components/PubmedSearch";
 import "./App.css";
 
 function App() {
-  return <div className="App">Search for a topic</div>;
+  return <PubmedSearch />;
 }
 
 export default App;
