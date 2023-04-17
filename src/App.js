@@ -1,9 +1,9 @@
 import React from "react";
-import PubmedSearch from "./components/PubmedSearch";
+import WikiSearch from "./components/WikiSearch";
 import "./App.css";
 
 function App() {
-  return <PubmedSearch />;
+  return <WikiSearch />;
 }
 
 export default App;

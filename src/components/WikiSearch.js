@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { Container, Button } from "react-bootstrap";
 import axios from "axios";
+import WikiResults from "./WikiResults";
 
 export default function PubmedSearch() {
   let [searchword, setSearchword] = useState("");
+  let [results, setResults] = useState(null);
 
   function handleResponse(response) {
-    console.log(response);
+    console.log(response.data.pages[0].description);
+    setResults(response.data.pages[0]);
   }
 
   function search(event) {
@@ -24,8 +27,9 @@ export default function PubmedSearch() {
       <div>Search for a topic</div>
       <form onSubmit={search}>
         <input type="search" onChange={handleSearch}></input>
-      </form>
+      </form>{" "}
       <Button>Search</Button>
+      <WikiResults results={results} />
     </Container>
   );
 }
